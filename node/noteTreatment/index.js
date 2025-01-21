@@ -69,4 +69,30 @@ function DeleteNote()
     })
 }
 
+NoteAppMenu()
+{
+    console.log("[1] Add note\n[2] Read notes\n[3] Delete note");
+    rl.question(">", (input) => {
+        switch (input)
+        {
+            case 1:
+            AddNote();
+            NoteAppMenu();
+            break;
+            case 2:
+            ReadNotes();
+            NoteAppMenu();
+            break;
+            case 3:
+            DeleteNote();
+            NoteAppMenu();
+            break;
+            default:
+            console.log("Invalid input");
+            NoteAppMenu();
+            break;
+        }
+    })
+}
+
 NoteAppMenu();
