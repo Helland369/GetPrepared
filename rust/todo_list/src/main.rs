@@ -3,7 +3,7 @@ use std::io;
 struct Task {
     id: u32,
     description: String,
-    compleated: bool,
+    completed: bool,
 }
 
 struct TaskList {
@@ -17,26 +17,26 @@ impl TaskList {
 
     fn add_task(&mut self, description: &str) {
         let id = (self.tasks.len() as u32) + 1;
-        let _new_taks = Task {
+        let _new_task = Task {
             id: id,
             description: description.to_string(),
-            compleated: false,
+            completed: false,
         };
-        self.tasks.push(_new_taks);
+        self.tasks.push(_new_task);
     }
 
     fn list_tasks(&self) {
         for task in &self.tasks {
             println!(
                 "Id: {}, Description: {}, Compleated: {}",
-                task.id, task.description, task.compleated
+                task.id, task.description, task.completed
             );
         }
     }
 
     fn complete_task(&mut self, id: u32) {
         if let Some(task) = self.tasks.iter_mut().find(|x| x.id == id) {
-            task.compleated = true;
+            task.completed = true;
         }
     }
 
