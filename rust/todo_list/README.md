@@ -1,13 +1,13 @@
 # Simple todo app in rust
 
-- [Run and install](#How to run and install the program)
-- [About](#About the program)
-    - [Struct](##Struct)
-    - [Vector](##Vector)
-    - [Add task](##Add task)
-    - [Print all tasks](##print all tasks)
-    - [Complete task](##Complete task)
-    - [Remove task](##Remove task)
+- [Run and install](#How-to-run-and-install-the-program)
+- [About](#About-the-program)
+    - [Struct](#Struct)
+    - [Vector](#Vector)
+    - [Add task](#Add-task)
+    - [Print all tasks](#print-all-tasks)
+    - [Complete task](#Complete-task)
+    - [Remove task](#Remove-task)
 
 # How to run and install the program
 
@@ -39,7 +39,7 @@ cargo run
 # About the program
 
 
-## Struct
+### Struct
 
 There is a struct "Task", which represents the properties of a task.
 
@@ -53,7 +53,7 @@ struct Task {
 
 ```
 
-## Vector
+### Vector
 
 Each task is stored in a vector inside a struct, making it a list or array of tasks.
 
@@ -65,7 +65,7 @@ struct TaskList {
 
 ```
 
-## Add task
+### Add task
 
 The add_task function adds a new task to the vector, the function takes one argument in form of a new task description (string).
 
@@ -83,7 +83,7 @@ fn add_task(&mut self, description: &str) {
 
 ```
 
-## Print all tasks
+### Print all tasks
 
 The list_tasks function takes no arguments. It's job is to print/display all the tasks in the vector.
 
@@ -101,7 +101,7 @@ fn list_tasks(&self) {
 
 ```
 
-## Complete task
+### Complete task
 
 The complete_task function takes an id as an argument and updates the corresponding task's boolean value from false to true.
 
@@ -115,7 +115,7 @@ fn complete_task(&mut self, id: u32) {
 
 ```
 
-## Remove task
+### Remove task
 
 The remove_taks function remove a task from the vector of tasks.
 
