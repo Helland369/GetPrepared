@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"time"
 )
 
 type person struct {
@@ -49,6 +50,13 @@ func static_web_page() {
 	fmt.Println("Static file server is running at http:://localhost:8080/static/page1.html")
 }
 
+func go_routine_time() {
+	for {
+		fmt.Println("Time: ", time.Now().Format("15:04:05"))
+		time.Sleep(5 * time.Second)
+	}
+}
+
 func main() {
 	static_web_page()
 
@@ -56,6 +64,8 @@ func main() {
 	http.HandleFunc("/about", handler_about)
 	http.HandleFunc("/contact", handler_contact)
 	http.HandleFunc("/json", handler_json)
+
+	go go_routine_time()
 
 	http.ListenAndServe(":8080", nil)
 }
