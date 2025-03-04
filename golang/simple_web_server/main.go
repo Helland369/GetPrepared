@@ -17,8 +17,8 @@ type person struct {
 }
 
 // localhos:8080/
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome to the simple go web server!\n")
+func handler_home(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "welcome to the simple go web server!\n")
 }
 
 // localhos:8080/about
@@ -78,7 +78,7 @@ func main() {
 	static_web_page()
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", handler)
+	mux.HandleFunc("/", handler_home)
 	mux.HandleFunc("/about", handler_about)
 	mux.HandleFunc("/contact", handler_contact)
 	mux.HandleFunc("/json", handler_json)
